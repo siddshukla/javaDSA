@@ -1,26 +1,25 @@
+package DSA;
+
 import java.util.Scanner;
 
-public class positionOfElementIfinitelength {
+public class ceilingNumber {
     public static void main(String[] args) {
+// the first criteria is that, array must be in either ascending or descending order
         int[] arr={2,3,4,5,6,10,13,17,19,56,69,77,887,90000,};
         Scanner sc=new Scanner(System.in);
         System.out.println("enter the number to search");
         int n= sc.nextInt();
-        int search=findAns(arr,n);
-        System.out.println(search);
-    }
-    static int findAns(int[] arr,int n){
-        int start=0;
-        int end=1;
-        while(n>arr[end]){
-            int newstart=end+1;
-            end=end+(end-start+1)*2;
-            start=newstart;
+        int search=binarysearch(arr,n);
+        if (search==-1){
+            System.out.println("not present");
         }
-        return binarySearch(arr,n,start,end);
+        else {
+            System.out.println("the ceiling of a number "+n+"is:"+arr[search]);
+        }
     }
-    static int binarySearch(int[] arr,int n,int a,int b){
-
+    static int binarysearch(int[] arr,int n){
+        int a=0;
+        int b= arr.length-1;
         while (a<=b){
             int mid =a+(b-a)/2;
             if (arr[mid]>n){
@@ -33,6 +32,6 @@ public class positionOfElementIfinitelength {
                 return mid;
             }
         }
-        return -1;
+        return a;
     }
 }
