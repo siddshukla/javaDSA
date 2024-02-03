@@ -1,3 +1,5 @@
+package oops;
+
 public class wrapperclasses {
     public static void main(String[] args) {
         int a=10;
@@ -16,10 +18,7 @@ public class wrapperclasses {
     }
 }
 class a{
-    int a;
-    int b;
+    int a=4;
+    int b=5;
 
-    public a(int a) {
-        this.a = a;
-    }
 }
